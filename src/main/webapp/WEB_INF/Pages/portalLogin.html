@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<div data-dojo-attach-point="boxLeft" class="shell__box shell__box--left">
+
+    <div class="connection-state" id="shell_connectionState_ConnectionState_0" widgetid="shell_connectionState_ConnectionState_0">
+        <div class="connection-state__message" data-dojo-attach-point="message"></div>
+    </div>
+
+    <div class="app_menu dijitDownArrowButton" tabindex="1" id="shell_appMenu_AppMenu_0" widgetid="shell_appMenu_AppMenu_0">
+
+        <div class="app_menu_header">
+
+            <div class="app_menu_team">
+
+                <div class="app_menu_team_name" data-dojo-attach-point="teamNode">riva</div>
+
+            </div>
+
+            <div data-dojo-attach-point="inviteNode" class="app_menu_invite protip-item" data-protip-id="1" style="display: block;">+ Invite</div>
+
+        </div>
+
+        <div data-dojo-attach-point="_buttonNode" class="app_menu_body">
+
+            <div class="app_menu_avatar">
+
+                <div class="contact_avatar contact_avatar-profile contact_avatar-contact contact_avatar-inactive contact_avatar-status image-loaded" id="widgets_contact_Avatar_0" widgetid="widgets_contact_Avatar_0">
+                    <div class="contact_avatar_view">
+                        <div data-dojo-attach-point="pictureNode" class="contact_avatar_picture" style="background-image: url(&quot;https://i.flockusercontent-staging.com/default-101.png&quot;);"></div>
+                        <div class="contact_avatar_picture_loading"></div>
+                        <div data-dojo-attach-point="stateNode" class="contact_avatar_state"></div>
+                    </div>
+                    <div class="contact_avatar_info">
+                        <div class="contact_avatar_profile">
+                            <div data-dojo-attach-point="nameNode" class="contact_avatar_name">Suruchi.j jain</div>
+                            <div data-dojo-attach-point="guestNode" class="contact_avatar_guest"></div>
+                        </div>
+                        <div data-dojo-attach-point="statusNode" class="contact_avatar_status">Set a status...</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="app_menu_icon"></div>
+
+        </div>
+
+    </div>
+
+    <div class="search" id="searchController" widgetid="searchController">
+
+        <div class="search__handle">
+            <div class="search__handle-back"></div>
+            <div data-dojo-attach-point="handle" class="search__handle-search"></div>
+        </div>
+
+        <div class="search__editor">
+
+            <div class="conv-search" id="convSearch" widgetid="convSearch">
+
+                <div data-dojo-attach-point="pills" class="conv-search__pills"></div>
+
+                <div class="conv-search__editor">
+
+                    <div data-dojo-attach-point="placeholder" class="conv-search__placeholder">Start a chat (⌘K)</div>
+
+                    <input data-dojo-attach-point="textbox, focusNode" class="conv-search__input" type="text" autocomplete="off" autocorrect="off" spellcheck="false" dir="auto" tabindex="-1" placeholder="">
+
+                </div>
+
+                <div data-dojo-attach-point="actions" class="conv-search__actions">
+
+                    <div class="conv-search__action conv-search__frequent">
+                        <div class="conv-search__add-contact2"></div>
+                        <span>frequent</span>
+                    </div>
+
+                    <div class="conv-search__action conv-search__recent">
+                        <div class="conv-search__globe"></div>
+                        <span>recent</span>
+                    </div>
+
+                </div>
+
+                <div data-dojo-attach-point="_buttonNode" class="dijitDownArrowButton"></div>
+
+            </div>
+
+        </div>
+
+        <div class="search__plus" data-dojo-attach-point="plusWidget">
+
+            <div class="plus-icon dijitDownArrowButton protip-item" id="shell_plus_PlusWidget_0" widgetid="shell_plus_PlusWidget_0" data-protip-id="2"></div>
+
+        </div>
+
+    </div>
+
+    <div class="active-chats" id="shell_stack_Controller_0" widgetid="shell_stack_Controller_0" style="overflow: hidden;">
+        <div data-dojo-attach-point="bucketContainer" class="active-chats__scrollable"><div class="active-chats-bucket pinned-bucket ace-expanded active-chats-bucket--visible" id="uniqName_19_0" widgetid="uniqName_19_0">
+            <div data-dojo-attach-point="header" class="active-chats-header">
+                <div class="active-chats__header-text">PINNED CHATS</div>
+                <div class="active-chats-action-buttons" data-dojo-attach-event="onclick: onActionButtonClick">
+                    <div class="bucket-style-drop-down dijitDownArrowButton" id="shell_stack_BucketStyleDropDown_3" widgetid="shell_stack_BucketStyleDropDown_3"></div>
+                </div>
+                <div data-dojo-attach-point="headerMessageCounter" class="active-chats-header__messageCounter"></div>
+            </div>
+            <div data-dojo-attach-point="contentArea">
+                <div id="shell_stack_PinnedList_0" class="flatlist pinned-list" widgetid="shell_stack_PinnedList_0"><div data-dojo-attach-point="containerNode" class="flatList"><div class="conversation ace-expanded buddy tango listNode feedback me-bot selected" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_8" widgetid="dijit__Templated_8" data-id="uaau28we0i8ui8c0@go.to--Botguidformechat@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar" id="widgets_ProfilePicWithPresence_1" widgetid="widgets_ProfilePicWithPresence_1">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-101.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Suruchi.j j (me)</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message" id="shell_stack_Message_0" widgetid="shell_stack_Message_0" style="visibility: hidden;">
+                                <span class="senderName" dojoattachpoint="nameNode"></span>
+                                <span class="text" dojoattachpoint="textNode"></span>
+                                <span class="xmpp_receipt" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="13"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread no-unread-mentions" data-dojo-attach-point="unreadCountNode">0</div>
+                </div></div></div>
+            </div>
+        </div><div class="active-chats-bucket active-bucket active-chats-bucket--visible ace-expanded" id="uniqName_19_1" widgetid="uniqName_19_1">
+            <div data-dojo-attach-point="header" class="active-chats-header">
+                <div class="active-chats__header-text">OPEN CHATS</div>
+                <div class="active-chats-action-buttons" data-dojo-attach-event="onclick: onActionButtonClick">
+                    <span class="active-chats-header__icons active-chats-header__searchRecent protip-item" data-dojo-attach-point="searchRecentButton" data-dojo-attach-event="onclick: _onSearchRecentFromHeader" data-protip-id="4"></span>
+                    <div class="bucket-style-drop-down dijitDownArrowButton" id="selectStyleHeader" widgetid="selectStyleHeader"></div>
+                    <span class="active-chats-header__icons active-chats-header__invite protip-item" data-dojo-attach-point="inviteButton" data-dojo-attach-event="onclick: onInvite" data-protip-id="3"></span>
+                </div>
+                <div data-dojo-attach-point="headerMessageCounter" class="active-chats-header__messageCounter active-chats-header__messageCounter--visible"><span>25</span></div>
+            </div>
+            <div data-dojo-attach-point="contentArea">
+                <div id="shell_stack_AnimatingList_0" class="flatlist active-list" widgetid="shell_stack_AnimatingList_0"><div data-dojo-attach-point="containerNode" class="flatList" style="position: relative; width: 100%;"><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_14" widgetid="dijit__Templated_14" data-id="uaau28we0i8ui8c0@go.to--r839kr3x8xrl3c09@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_6" widgetid="widgets_ProfilePicWithPresence_6">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-114.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Avinashv_test_0024</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_5" widgetid="shell_stack_Message_5" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Avinashv_test_0024 joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="101"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_27" widgetid="dijit__Templated_27" data-id="uaau28we0i8ui8c0@go.to--qaa0j8jpg00a2555@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_19" widgetid="widgets_ProfilePicWithPresence_19">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-111.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Avinashv_test_0025</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_18" widgetid="shell_stack_Message_18" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Avinashv_test_0025 joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="114"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_21" widgetid="dijit__Templated_21" data-id="uaau28we0i8ui8c0@go.to--g6lu6lovz22vn22o@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_13" widgetid="widgets_ProfilePicWithPresence_13">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-114.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Avinashv_test_0026 D</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_12" widgetid="shell_stack_Message_12" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Avinashv_test_0026 D joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="108"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_13" widgetid="dijit__Templated_13" data-id="uaau28we0i8ui8c0@go.to--ree307c38mm183l7@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_5" widgetid="widgets_ProfilePicWithPresence_5">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-111.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Avinashv_test_0027 D</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_4" widgetid="shell_stack_Message_4" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Avinashv_test_0027 D joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="100"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_34" widgetid="dijit__Templated_34" data-id="uaau28we0i8ui8c0@go.to--ytyzf1qyqtqgf1yg@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_26" widgetid="widgets_ProfilePicWithPresence_26">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-115.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Avinashv_test_0028 D</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_25" widgetid="shell_stack_Message_25" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Avinashv_test_0028 D joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="121"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_29" widgetid="dijit__Templated_29" data-id="uaau28we0i8ui8c0@go.to--jkwjwpbxssox0kp0@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_21" widgetid="widgets_ProfilePicWithPresence_21">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-113.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">hh H</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_20" widgetid="shell_stack_Message_20" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! hh hj joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="116"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_10" widgetid="dijit__Templated_10" data-id="uaau28we0i8ui8c0@go.to--tz8zogzlgz0vzlll@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_2" widgetid="widgets_ProfilePicWithPresence_2">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-115.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Avinashv_test_0029 D</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_1" widgetid="shell_stack_Message_1" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Avinashv_test_0029 D joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="97"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_28" widgetid="dijit__Templated_28" data-id="uaau28we0i8ui8c0@go.to--4xvxv12j46jg6igx@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_20" widgetid="widgets_ProfilePicWithPresence_20">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-112.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Avinashv_test_0030 D</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_19" widgetid="shell_stack_Message_19" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Avinashv_test_0030 D joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="115"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_26" widgetid="dijit__Templated_26" data-id="uaau28we0i8ui8c0@go.to--5nj3cxskxxshxcs3@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_18" widgetid="widgets_ProfilePicWithPresence_18">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-115.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Avinashv_test_0031 D</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_17" widgetid="shell_stack_Message_17" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Avinashv_test_0031 D joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="113"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_17" widgetid="dijit__Templated_17" data-id="uaau28we0i8ui8c0@go.to--blvyohbeyfwfeyov@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_9" widgetid="widgets_ProfilePicWithPresence_9">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-114.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Avinashv_test_0032 D</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_8" widgetid="shell_stack_Message_8" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Avinashv_test_0032 D joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="104"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_12" widgetid="dijit__Templated_12" data-id="uaau28we0i8ui8c0@go.to--j59jo4aqqqqia9q5@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_4" widgetid="widgets_ProfilePicWithPresence_4">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-111.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">ds S</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_3" widgetid="shell_stack_Message_3" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! ds sd joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="99"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_22" widgetid="dijit__Templated_22" data-id="uaau28we0i8ui8c0@go.to--owwvroveeevwtwv7@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_14" widgetid="widgets_ProfilePicWithPresence_14">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-113.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Android 4</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_13" widgetid="shell_stack_Message_13" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Android 41 joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="109"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_16" widgetid="dijit__Templated_16" data-id="uaau28we0i8ui8c0@go.to--w1ho1d7dh6985d7h@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_8" widgetid="widgets_ProfilePicWithPresence_8">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-115.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Rishabh.ja</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_7" widgetid="shell_stack_Message_7" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Rishabh.ja joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="103"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_11" widgetid="dijit__Templated_11" data-id="uaau28we0i8ui8c0@go.to--9wmm3i22tw9m1m89@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_3" widgetid="widgets_ProfilePicWithPresence_3">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-115.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Avinashv_test_0040 D</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_2" widgetid="shell_stack_Message_2" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Avinashv_test_0040 D joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="98"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_19" widgetid="dijit__Templated_19" data-id="uaau28we0i8ui8c0@go.to--87x65x908752x7q6@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_11" widgetid="widgets_ProfilePicWithPresence_11">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-113.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Hz Z</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_10" widgetid="shell_stack_Message_10" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Hz Zh joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="106"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">2</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_31" widgetid="dijit__Templated_31" data-id="uaau28we0i8ui8c0@go.to--q56e6x60x80ez6xq@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_23" widgetid="widgets_ProfilePicWithPresence_23">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-114.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Avinashv_test_0041</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_22" widgetid="shell_stack_Message_22" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Avinashv_test_0041 joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="118"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_20" widgetid="dijit__Templated_20" data-id="uaau28we0i8ui8c0@go.to--m58pnn8p8qqn5qp5@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_12" widgetid="widgets_ProfilePicWithPresence_12">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-101.png?r=1155484576">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Shwetha C K</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_11" widgetid="shell_stack_Message_11" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Shwetha C K joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="107"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_15" widgetid="dijit__Templated_15" data-id="uaau28we0i8ui8c0@go.to--po52czz0cd1zo1oz@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_7" widgetid="widgets_ProfilePicWithPresence_7">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-115.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Shikhar.s S</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_6" widgetid="shell_stack_Message_6" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Shikhar.s singh joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="102"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_25" widgetid="dijit__Templated_25" data-id="uaau28we0i8ui8c0@go.to--0ujhaxuuqujanbx0@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_17" widgetid="widgets_ProfilePicWithPresence_17">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-113.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Yugandhar V</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_16" widgetid="shell_stack_Message_16" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Yugandhar V joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="112"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_30" widgetid="dijit__Templated_30" data-id="uaau28we0i8ui8c0@go.to--4f994zym4vdcmbfz@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_22" widgetid="widgets_ProfilePicWithPresence_22">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-101.png?r=1155484576">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Amit D</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_21" widgetid="shell_stack_Message_21" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Amit Dhaka joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="117"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_24" widgetid="dijit__Templated_24" data-id="uaau28we0i8ui8c0@go.to--uuu94y5kx8xu429k@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_16" widgetid="widgets_ProfilePicWithPresence_16">
+                            <img data-dojo-attach-point="imgNode" src="https://i.talk.to/2o5dzd2dz5sszysy">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Ralston.f S</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_15" widgetid="shell_stack_Message_15" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Ralston.f Staging joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="111"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_23" widgetid="dijit__Templated_23" data-id="uaau28we0i8ui8c0@go.to--p7obwwoowwgwwppb@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_15" widgetid="widgets_ProfilePicWithPresence_15">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-101.png?r=1155484576">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Farzan S</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_14" widgetid="shell_stack_Message_14" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Farzan Riva joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="110"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">2</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_33" widgetid="dijit__Templated_33" data-id="uaau28we0i8ui8c0@go.to--qu4qmxu5q39h4043@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_25" widgetid="widgets_ProfilePicWithPresence_25">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-101.png?r=1155484576">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Bikash Kumar K</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_24" widgetid="shell_stack_Message_24" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Bikash Kumar Khetan joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="120"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">2</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_32" widgetid="dijit__Templated_32" data-id="uaau28we0i8ui8c0@go.to--p8q2q7qkppqz80i7@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_24" widgetid="widgets_ProfilePicWithPresence_24">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-101.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Ravi A</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_23" widgetid="shell_stack_Message_23" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Ravi A joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="119"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div><div class="conversation buddy tango listNode feedback attention has-unread-message presence--away" data-dojo-attach-event="onclick:_myOnClick" data-dojo-attach-point="containerNode" id="dijit__Templated_18" widgetid="dijit__Templated_18" data-id="uaau28we0i8ui8c0@go.to--aeanrpp8ea7knbb8@go.to" tabindex="-1">
+                    <div class="conversation__avatar">
+                        <div class="presence-avatar presence-avatar--away" id="widgets_ProfilePicWithPresence_10" widgetid="widgets_ProfilePicWithPresence_10">
+                            <img data-dojo-attach-point="imgNode" src="https://i.flockusercontent-staging.com/default-115.png">
+                            <div class="presence"></div>
+                        </div>
+                    </div>
+                    <div class="chat-description">
+                        <div class="ace-compact-avatar"></div>
+                        <div class="name">
+                            <div data-dojo-attach-point="_nameNode" class="channel-name">Random M</div>
+                            <div data-dojo-attach-point="_guestNode" class="guest-name-suffix"></div>
+                        </div>
+                        <div class="messages">
+                            <div class="message chat_message_peer" id="shell_stack_Message_9" widgetid="shell_stack_Message_9" style="visibility: visible;">
+                                <span class="senderName visible" dojoattachpoint="nameNode">FlockBot:</span>
+                                <span class="text" dojoattachpoint="textNode">Hello $userFirstName! Random joined your Flock team.</span>
+                                <span class="xmpp_receipt received" dojoattachpoint="receiptNode"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation__actions">
+                        <div class="pinButton protip-item pinButton--visible" data-dojo-attach-point="_pinButtonNode" data-dojo-attach-event="onclick: _pinApp" data-protip-id="105"></div>
+                        <div class="closeButton" data-dojo-attach-point="_closeButtonNode" data-dojo-attach-event="onclick:_closeApp"></div>
+                    </div>
+                    <div class="unreadMessages no-unread-mentions has-unread" data-dojo-attach-point="unreadCountNode">1</div>
+                </div></div></div>
+            </div>
+            <div data-dojo-attach-point="footer" class="active-chats-footer" data-dojo-attach-event="onclick: onRecentChats">
+                Recent Chats
+            </div>
+            <div class="active-chat-empty-state">
+                <div class="empty-image"></div>
+                <div class="empty-text">No open chats</div>
+                <div class="empty-chat-links">
+                    <div class="empty-open-chat-text" data-dojo-attach-event="onclick: openSearch">Start New</div>
+                    <div class="empty-open-recent-text" data-dojo-attach-event="onclick: onViewRecent">View Recents</div>
+                </div>
+            </div>
+            <div data-dojo-attach-point="activeBucketInvite"></div>
+        </div><div class="active-chats-bucket muted-bucket ace-compact" id="uniqName_19_2" widgetid="uniqName_19_2">
+            <div data-dojo-attach-point="header" class="active-chats-header">
+                <div class="active-chats__header-text">MUTED CHANNELS</div>
+                <div class="active-chats-action-buttons" data-dojo-attach-event="onclick: onActionButtonClick" data-dojo-attach-point="actionButton">
+                    <span class="active-chats-header__icons active-chats-header__browseChannels protip-item" data-dojo-attach-point="browseChannelButton" data-dojo-attach-event="onclick: onBrowseChannels" data-protip-id="5"></span>
+                    <span data-dojo-attach-point="openGroupsCount" id="widgets_JoinChannelCounter_4" class="open-channel-counter" widgetid="widgets_JoinChannelCounter_4">83</span>
+                    <div class="bucket-style-drop-down dijitDownArrowButton" id="shell_stack_BucketStyleDropDown_4" widgetid="shell_stack_BucketStyleDropDown_4"></div>
+                    <span class="active-chats-header__icons active-chats-header__createChannel protip-item" data-dojo-attach-point="createChannelButton" data-dojo-attach-event="onclick: onCreateChannel" data-protip-id="6"></span>
+                </div>
+                <div data-dojo-attach-point="headerMessageCounter" class="active-chats-header__messageCounter"></div>
+            </div>
+            <div data-dojo-attach-point="contentArea">
+                <div class="channel-feed-tab" data-dojo-attach-point="channelFeedNode" id="channelFeed" data-dojo-attach-event="onclick: showFeed">
+                    <div class="channel-feed-tab-name">All Channel Feed</div>
+                    <div class="channel-feed-tab-counter" data-dojo-attach-point="channelFeedCounter" style="display: none;"></div>
+                </div>
+                <div id="shell_stack_MutedGroupsList_0" class="flatlist muted-list" widgetid="shell_stack_MutedGroupsList_0"><div data-dojo-attach-point="containerNode" class="flatList" style="position: relative; width: 100%;"></div></div>
+            </div>
+        </div></div>
+        <div data-dojo-attach-point="_pinnedButton" class="active-chats-header active-chats-header--button">
+            <div class="active-chats__header-text">PINNED CHATS</div>
+            <div class="active-chats-action-buttons" data-dojo-attach-event="onclick: onActionButtonClick">
+                <div class="bucket-style-drop-down dijitDownArrowButton" id="shell_stack_BucketStyleDropDown_0" widgetid="shell_stack_BucketStyleDropDown_0"></div>
+            </div>
+            <div data-dojo-attach-point="_pinnedButtonMessageCounter" class="active-chats-header__messageCounter"></div>
+        </div>
+        <div data-dojo-attach-point="_activeButton" class="active-chats-header active-chats-header--button">
+            <div class="active-chats__header-text">OPEN CHATS</div>
+            <div class="active-chats-action-buttons" data-dojo-attach-event="onclick: onActionButtonClick">
+                <div class="bucket-style-drop-down dijitDownArrowButton" id="shell_stack_BucketStyleDropDown_1" widgetid="shell_stack_BucketStyleDropDown_1"></div>
+                <span class="active-chats-header__icons active-chats-header__invite protip-item" data-dojo-attach-point="inviteButton" data-dojo-attach-event="onclick: onInvite" data-protip-id="7"></span>
+            </div>
+            <div data-dojo-attach-point="_activeButtonMessageCounter" class="active-chats-header__messageCounter active-chats-header__messageCounter--visible"><span>25</span></div>
+        </div>
+        <div data-dojo-attach-point="_mutedButton" class="active-chats-header active-chats-header--button">
+            <div class="active-chats-header__box">
+                <div class="active-chats__header-text">MUTED CHANNELS</div>
+                <div class="active-chats-action-buttons" data-dojo-attach-event="onclick: onActionButtonClick" data-dojo-attach-point="mutedActionButtons">
+                    <span class="active-chats-header__icons active-chats-header__browseChannels protip-item" data-dojo-attach-point="browseChannelButton" data-dojo-attach-event="onclick: onBrowseChannels" data-protip-id="8"></span>
+                    <span data-dojo-attach-point="openGroupsCount" id="widgets_JoinChannelCounter_3" class="open-channel-counter" widgetid="widgets_JoinChannelCounter_3">83</span>
+                    <div class="bucket-style-drop-down dijitDownArrowButton" id="shell_stack_BucketStyleDropDown_2" widgetid="shell_stack_BucketStyleDropDown_2"></div>
+                    <span class="active-chats-header__icons active-chats-header__createChannel protip-item" data-dojo-attach-point="createChannelButton" data-dojo-attach-event="onclick: onCreateChannel" data-protip-id="9"></span>
+                </div>
+                <div data-dojo-attach-point="_mutedButtonMessageCounter" class="active-chats-header__messageCounter"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+<p id="demo"></p>
+
+</body>
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+
+
+       var email="suruchi.j@directi.com";
+       var pass= "poi000poi";
+
+       var text2 ="{email:\""+email+"\",password:"+"\""+pass+"\""+"}";
+       var x= JSON.parse(this.responseText);
+       console.log(x.token);
+       document.getElementById("demo").innerHTML = x.token;
+       var token = JSON.parse(JSON.stringify(x.token)).token;
+       console.log(token);
+       var expiry = JSON.parse(JSON.stringify(x.token)).expirationMsec;
+       console.log(expiry);debugger;
+       var dateObj = Date.now();
+       dateObj += JSON.parse(JSON.stringify(x.token)).expirationMsec;
+       dateObj = new Date(dateObj);
+       document.cookie = "token="+token;debugger;
+       console.log(document.cookie);
+       <!--window.location.href ="/portal/src/main/webapp/WEB_INF/Pages/portalAPI.html";-->
+       console.log(document.cookie);
+    }
+
+  };
+
+xhttp.open("POST", "https://proxy-staging-external.handler.talk.to/go.to/fzeus/v5.0/authenticate");
+xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+xhttp.send(JSON.stringify(userInfo));
+
+}
+</script>
+<script>
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1,c.length);
+        }
+        if (c.indexOf(nameEQ) == 0) {
+            return c.substring(nameEQ.length,c.length);
+        }
+    }
+    return null;
+}
+
+
+</script>
+</html>

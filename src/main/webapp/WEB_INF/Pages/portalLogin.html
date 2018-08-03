@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+<p id="demo"></p>
+
+</body>
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+
+
+       var email="suruchi.j@directi.com";
+       var pass= "poi000poi";
+
+       var text2 ="{email:\""+email+"\",password:"+"\""+pass+"\""+"}";
+       var x= JSON.parse(this.responseText);
+       console.log(x.token);
+       document.getElementById("demo").innerHTML = x.token;
+       var token = JSON.parse(JSON.stringify(x.token)).token;
+       console.log(token);
+       var expiry = JSON.parse(JSON.stringify(x.token)).expirationMsec;
+       console.log(expiry);debugger;
+       var dateObj = Date.now();
+       dateObj += JSON.parse(JSON.stringify(x.token)).expirationMsec;
+       dateObj = new Date(dateObj);
+       document.cookie = "token="+token;debugger;
+       console.log(document.cookie);
+       <!--window.location.href ="/portal/src/main/webapp/WEB_INF/Pages/portalAPI.html";-->
+       console.log(document.cookie);
+    }
+
+  };
+
+xhttp.open("POST", "https://proxy-staging-external.handler.talk.to/go.to/fzeus/v5.0/authenticate");
+xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+xhttp.send(JSON.stringify(userInfo));
+
+}
+</script>
+<script>
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1,c.length);
+        }
+        if (c.indexOf(nameEQ) == 0) {
+            return c.substring(nameEQ.length,c.length);
+        }
+    }
+    return null;
+}
+
+
+</script>
+</html>

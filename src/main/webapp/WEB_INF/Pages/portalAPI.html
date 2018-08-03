@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Flock</title>
+    <base href="/portal">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="portal/static/css/styles.acff3498d6f25d15f2a5.bundle.css" rel="stylesheet">
+    <style></style>
+    <style>
+        .navbar-inverse[_ngcontent-c1]{background:#0abe51;border-radius:0;border:0}.navbar-brand[_ngcontent-c1]{padding:12px 30px}.navbar-nav[_ngcontent-c1]{float:right}.navbar-nav[_ngcontent-c1]   li[_ngcontent-c1]   a[_ngcontent-c1]{color:#fff;font-size:14px;text-decoration:none;text-align:center;position:relative;margin:12px 5px}.navbar-nav[_ngcontent-c1]   li[_ngcontent-c1]   a.active[_ngcontent-c1]:after, .navbar-nav[_ngcontent-c1]   li[_ngcontent-c1]   a[_ngcontent-c1]:hover:after{content:"";display:block;width:78%;height:3px;background:#fff;position:absolute;margin:0 auto;left:0;right:0;bottom:0}.navbar-brand[_ngcontent-c1]   img[_ngcontent-c1]{max-width:220px;width:100%}
+
+
+
+
+
+
+
+
+    </style>
+    <style>
+        .logout[_ngcontent-c2]{color:#fff!important;font-size:14px;padding:20px 15px;display:block;cursor:pointer;text-align:center}.logout[_ngcontent-c2]:hover{background:#ea4141;color:#fff!important;text-decoration:none}
+
+
+
+
+
+
+
+
+    </style>
+    <style>
+        .home-wrapper[_ngcontent-c3]{text-align:center}img[_ngcontent-c3]{max-width:600px;margin:35px 0}h1[_ngcontent-c3]{color:#222;font-size:45px}p[_ngcontent-c3]{margin:45px 0 auto}.button[_ngcontent-c3]{margin:0 25px 25px}
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<app-root _nghost-c0="" ng-version="4.4.6">
+    <app-navbar _ngcontent-c0="" _nghost-c1="">
+        <nav _ngcontent-c1="" class="navbar navbar-inverse">
+            <div _ngcontent-c1="" class="container-fluid">
+                <div _ngcontent-c1="" class="navbar-header">
+                    <a _ngcontent-c1="" class="navbar-brand" routerlink="/home" href="/home">
+                <span _ngcontent-c1="" class="">
+                     <img _ngcontent-c1="" alt="flock" src="portal/static/images/flock-support-logo-white.png">
+
+                </span>
+                    </a>
+                    <!---->
+                </div>
+
+                <div _ngcontent-c1="" class="navbar navbar-expand navbar-light" id="bs-example-navbar-collapse-2">
+                    <ul _ngcontent-c1="" class="nav navbar-nav">
+                        <!---->
+                        <li _ngcontent-c1="" class="nav-item">
+                            <span _ngcontent-c1="" class="user-message">User: suruchi.j@directi.com:entity</span>
+                        </li>
+                        <div>
+                            <li _ngcontent-c1="" class="nav-item"><a _ngcontent-c1="" class="nav-link"
+                                                                     routerlink="/teams" routerlinkactive="active"
+                                                                     href="/login">Login</a></li>
+                        </div>
+                        <li _ngcontent-c1="" class="nav-item">
+                            <app-logout _ngcontent-c1="" _nghost-c2=""><a _ngcontent-c2="" class="logout nav-link">Logout</a>
+                            </app-logout>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </app-navbar>
+    <main _ngcontent-c0="" class="container">
+        <router-outlet _ngcontent-c0=""></router-outlet>
+        <app-home _nghost-c3="">
+            <div _ngcontent-c3="" class="jumbotron home-wrapper wrapper">
+                <div _ngcontent-c3="" class="row">
+                    <h1 _ngcontent-c3="" class="col-md-8 offset-md-2">Welcome to</h1>
+                    <div _ngcontent-c3="" class="col-md-8 offset-md-2">
+                        <img _ngcontent-c3="" alt="flock" src="portal/static/images/flock-support-logo-black.png">
+
+
+                        <div class="Container ">
+                            <p>
+                            <form name="apiForm">
+                                TeamJID: <input type="text" name="teamID"></br></br>
+
+                                Guid: <input type="text" name="guid"></br></br>
+                                <input class="btn button" value="API" onclick="loadDoc()">
+                            </form>
+                            </p>
+                        </div>
+
+                        <!--<a _ngcontent-c3="" class="btn button" onclick="login()">login</a>-->
+                        <!--<a _ngcontent-c3="" class="btn button" onclick="api()">api</a>-->
+                    </div>
+                </div>
+            </div>
+        </app-home>
+    </main>
+</app-root>
+</body>
+
+
+<script type="text/javascript">
+
+
+function api() {
+
+var token = readCookie("token");debugger;
+if(token == null){
+alert("Login please!");
+window.location.href ="/portal/src/main/webapp/WEB_INF/Pages/portalCheck.html";
+}else{
+var to = document.forms["apiForm"]["teamID"].value;
+var guid = document.forms["apiForm"]["guid"].value;
+
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+var response = this.responseText;
+console.log(response);
+window.location.href ="/portal/src/main/webapp/WEB_INF/Pages/success.html";
+}else{
+console.log("Error", xhttp.statusText);
+}
+};
+
+var url = "https://proxy-staging-external.handler.talk.to/go.to/groups/5.0/activePublicGroupList?token="+token+"&guid="+guid;
+var url2 = "https://proxy-staging-external.handler.talk.to/go.to/groups/5.0/activePublicGroupList?oyotoydr3aammd0oamda33pttoyaosa3&guid=ocoy0oomocyocqm0";
+xhttp.open("POST", url2);
+xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+xhttp.send(JSON.stringify({to:to}));
+}
+}
+
+
+</script>
+
+
+<script type="text/javascript">
+    function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+                   var response = this.responseText;
+                   console.log(response);
+                   window.location.href = "/portal/src/main/webapp/WEB_INF/Pages/success.html";
+                   }
+
+  };
+
+xhttp.open("POST", "https://proxy-staging.handler.talk.to/go.to/groups/5.0/activePublicGroupList?token=oyotoydr3aammd0oamda33pttoyaosa3&guid=ocoy0oomocyocqm0");
+xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+xhttp.send(JSON.stringify({to: "5165@groups.go.to"}));
+}
+</script>
+
+
+<!--<script type="text/javascript">-->
+<!--function readCookie(name) {-->
+<!--var nameEQ = name + "=";-->
+<!--var ca = document.cookie.split(';');-->
+<!--for(var i=0;i < ca.length;i++) {-->
+<!--var c = ca[i];-->
+<!--while (c.charAt(0)==' ') {-->
+<!--c = c.substring(1,c.length);-->
+<!--}-->
+<!--if (c.indexOf(nameEQ) == 0) {-->
+<!--return c.substring(nameEQ.length,c.length);-->
+<!--}-->
+<!--}-->
+<!--return null;-->
+<!--}-->
+
+<!--</script>-->
+
+</html>

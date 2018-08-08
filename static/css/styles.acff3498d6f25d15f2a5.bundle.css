@@ -160,6 +160,11 @@ p {
 	margin-bottom: 1rem
 }
 
+.box-title {
+color:#0abe51;
+    margin: 0px;
+}
+
 abbr[data-original-title],
 abbr[title] {
 	text-decoration: underline;
@@ -4903,7 +4908,8 @@ tbody.collapse.show {
 	padding: 2rem 1rem;
 	margin-bottom: 2rem;
 	background-color: #f8f5f0;
-	border-radius: .3rem
+	border-radius: .3rem;
+	height:1000px
 }
 
 @media (min-width:576px) {

@@ -43,7 +43,7 @@
                             <span _ngcontent-c1="" class="user-message"></span>
                         </li>
                         <div>
-                            <li _ngcontent-c1="" class="nav-item"><a _ngcontent-c1="" class="nav-link" href="/portal/src/main/webapp/WEB_INF/Pages/login.html">Login</a></li>
+                            <li _ngcontent-c1="" class="nav-item"><a _ngcontent-c1="" class="nav-link" href="/portal/src/main/webapp/WEB_INF/Pages/login1.html">Login</a></li>
                         </div>
                         <li _ngcontent-c1="" class="nav-item">
                             <app-logout _ngcontent-c1="" _nghost-c2=""><a _ngcontent-c2="" class="logout nav-link" onclick="logout">Logout</a>
@@ -58,23 +58,20 @@
         <router-outlet _ngcontent-c0=""></router-outlet>
         <app-home _nghost-c3="">
             <div _ngcontent-c3="" class="jumbotron home-wrapper wrapper">
-                <div class="box-title" style="border: 1px solid green;float:left;solid black;background:green;height:550px;width:200px">
-                    </div>
-                <div class="dropdown" align="center" style="text-align:right">
-                    <input type="checkbox" id="checkbox_toggle">
-                    <ul>
-                        <li><a href="#">Link One</a></li>
-                        <li><a href="#">Link Two</a></li>
-                        <li><a href="#">Link Three</a></li>
-                        <li><a href="#">Link Four</a></li>
-                    </ul>
-                </div>
-                    <div _ngcontent-c3="" class="row">
+                <div _ngcontent-c3="" class="row">
+                    <div class="Container ">
+                        <form name="apiForm" >
+                            Type: <input type="text" name="type"><br><br>
 
-                            </div>
-                        </div>
+                            EnabledFrom: <input type="text" name="enabledFrom"><br><br>
+
+                            EnabledTill: <input type="text" name="enabledTill"><br><br>
+                            <button class="btn button" type="button" onclick="loadDoc()">create Team</button>
+                        </form>
                     </div>
                 </div>
+            </div>
+            </div>
             </div>
         </app-home>
     </main>
@@ -114,8 +111,6 @@ xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 xhttp.send(JSON.stringify({to:to}));
 }
 }
-
-
 </script>
 
 
@@ -137,12 +132,10 @@ xhttp.send(JSON.stringify({to: "5165@groups.go.to"}));
 }
 </script>
 <script>
-
-                     function logout() {
+                      function logout() {
                       localStorage.clear();
                       var token = document.cookie;
                       eraseCookie();
                      }
-
 </script>
 </html>

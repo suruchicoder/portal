@@ -10,22 +10,16 @@
     <link href="portal/static/css/styles.acff3498d6f25d15f2a5.bundle.css" rel="stylesheet">
     <style></style>
     <style>
-        .navbar-inverse[_ngcontent-c1]{background:#0abe51;border-radius:0;border:0}.navbar-brand[_ngcontent-c1]{padding:12px 30px}.navbar-nav[_ngcontent-c1]{float:right}.navbar-nav[_ngcontent-c1]   li[_ngcontent-c1]   a[_ngcontent-c1]{color:#fff;font-size:14px;text-decoration:none;text-align:center;position:relative;margin:12px 5px}.navbar-nav[_ngcontent-c1]   li[_ngcontent-c1]   a.active[_ngcontent-c1]:after, .navbar-nav[_ngcontent-c1]   li[_ngcontent-c1]   a[_ngcontent-c1]:hover:after{content:"";display:block;width:78%;height:3px;background:#fff;position:absolute;margin:0 auto;left:0;right:0;bottom:0}.navbar-brand[_ngcontent-c1]   img[_ngcontent-c1]{max-width:220px;width:100%}
-
-
-
+        .navbar-inverse[_ngcontent-c1]{background:#0abe51;border-radius:0;border:0}.navbar-brand[_ngcontent-c1]{padding:12px 30px}.navbar-nav[_ngcontent-c1]{float:right}.navbar-nav[_ngcontent-c1]   li[_ngcontent-c1]   a[_ngcontent-c1]{color:#fff;font-size:14px;text-decoration:none;text-align:center;position:relative;margin:12px 5px}.navbar-nav[_ngcontent-c1]   li[_ngcontent-c1]   a.active[_ngcontent-c1]:after, .navbar-nav[_ngcontent-c1]   li[_ngcontent-c1]   a[_ngcontent-c1]:hover:after{content:"";display:block;width:78%;height:3px;background:#fff;position:absolute;margin:0 auto;left:0;right:0;bottom:0}.navbar-brand[_ngcontent-c1]   img[_ngcontent-c1]{max-width:90px;width:100%}
     </style>
     <style>
         .logout[_ngcontent-c2]{color:#fff!important;font-size:14px;padding:20px 15px;display:block;cursor:pointer;text-align:center}.logout[_ngcontent-c2]:hover{background:#ea4141;color:#fff!important;text-decoration:none}
-
-
-
+    </style>
+    <style>
+        .logout[_ngcontent-c2]{color:#fff!important;font-size:14px;padding:20px 15px;display:block;cursor:pointer;text-align:center}.logout[_ngcontent-c2]:hover{background:#ea4141;color:#fff!important;text-decoration:none}
     </style>
     <style>
         .home-wrapper[_ngcontent-c3]{text-align:center}img[_ngcontent-c3]{max-width:600px;margin:35px 0}h1[_ngcontent-c3]{color:#222;font-size:45px}p[_ngcontent-c3]{margin:45px 0 auto}.button[_ngcontent-c3]{margin:0 25px 25px}
-
-
-
     </style>
 </head>
 <body>
@@ -34,10 +28,10 @@
         <nav _ngcontent-c1="" class="navbar navbar-inverse">
             <div _ngcontent-c1="" class="container-fluid">
                 <div _ngcontent-c1="" class="navbar-header">
-                    <a _ngcontent-c1="" class="navbar-brand" routerlink="/home" href="/home">
+                    <a _ngcontent-c1="" class="navbar-brand" routerlink="/home">
                 <span _ngcontent-c1="" class="">
-                     <img _ngcontent-c1="" alt="flock" src="portal/static/images/flock-support-logo-white.png">
-
+                    <img _ngcontent-c1="" alt="flock" height= "100" width="100"
+                    src="portal/static/images/image_flock.png">
                 </span>
                     </a>
                     <!---->
@@ -47,15 +41,15 @@
                     <ul _ngcontent-c1="" class="nav navbar-nav">
                         <!---->
                         <li _ngcontent-c1="" class="nav-item">
-                            <span _ngcontent-c1="" class="user-message">User: suruchi.j@directi.com:entity</span>
+
+                            <!--logged In user email in span-->
+                            <span _ngcontent-c1="" class="user-message"></span>
                         </li>
                         <div>
-                            <li _ngcontent-c1="" class="nav-item"><a _ngcontent-c1="" class="nav-link"
-                                                                     routerlink="/teams" routerlinkactive="active"
-                                                                     href="/login">Login</a></li>
+                            <li _ngcontent-c1="" class="nav-item"><a _ngcontent-c1="" class="nav-link" href="/portal/src/main/webapp/WEB_INF/Pages/login.html">Login</a></li>
                         </div>
                         <li _ngcontent-c1="" class="nav-item">
-                            <app-logout _ngcontent-c1="" _nghost-c2=""><a _ngcontent-c2="" class="logout nav-link">Logout</a>
+                            <app-logout _ngcontent-c1="" _nghost-c2=""><a _ngcontent-c2="" class="logout nav-link" onclick="logout">Logout</a>
                             </app-logout>
                         </li>
                     </ul>
@@ -70,8 +64,8 @@
                 <div _ngcontent-c3="" class="row">
                     <h1 _ngcontent-c3="" class="col-md-8 offset-md-2">Welcome to</h1>
                     <div _ngcontent-c3="" class="col-md-8 offset-md-2">
-                        <img _ngcontent-c3="" alt="flock" src="portal/static/images/flock-support-logo-black.png">
-
+                        <img _ngcontent-c3="" alt="flock" height= "100" width="350"
+                        src="portal/static/images/flock-image.png">
 
                         <div class="Container ">
                             <p>
@@ -79,15 +73,15 @@
                                 Email Id: <input type="text" name="email"></br></br>
 
                                 Password: <input type="password" name="password"></br></br>
+
+                                Team Id: <input type="text" name="teamId"></br></br>
+
                                 <input class="btn button" value="login" onclick="getUserInfo()">
                             </form>
                             </p>
 
                         </div>
                     </div>
-
-                    <!--<a _ngcontent-c3="" class="btn button" onclick="login()">login</a>-->
-                    <!--<a _ngcontent-c3="" class="btn button" onclick="api()">api</a>-->
                 </div>
             </div>
         </app-home>
@@ -98,9 +92,11 @@
 <script type="text/javascript">
                       function getUserInfo() {
 
-                      var email = document.forms["myForm"]["email"].value;
+                      var email = document.forms["myForm"]["email"].value;debugger;
                       console.log(email);
                       var pass = document.forms["myForm"]["password"].value;
+                      var teamId = document.forms["myForm"]["teamId"].value;
+
                       console.log(pass);
 
                       var userInfo = "{email:email,password:pass}";
@@ -119,6 +115,19 @@
                          console.log(response);
 
                           var x= JSON.parse(this.responseText);
+                          for(var i=0;i<x.teams.length;i++){
+                            teamInfo = x.teams[i];
+                           if(teamInfo.teamId == teamId){
+                           console.log(teamInfo);
+                           localStorage.setItem("teamName", teamInfo.teamName);
+                           localStorage.setItem("teamPlan", teamInfo.licenseInfo.teamPlan);
+                           localStorage.setItem("isLicensed", teamInfo.licenseInfo.isLicensed);
+                           localStorage.setItem("role", teamInfo.role);
+                           localStorage.setItem("isAdmin", teamInfo.isAdmin);
+                           break;
+                       }
+                      }
+
                           console.log(x.token);
 
                           var token = x.token.token;
@@ -132,7 +141,6 @@
                           console.log(document.cookie);
                           window.location.href ="/portal/src/main/webapp/WEB_INF/Pages/portalAPI.html";
                           console.log(document.cookie);
-
                         }
                       };
 
@@ -145,32 +153,10 @@
 
 </script>
 <script>
-                      function api() {
 
-                      var token = readCookie("token");
-                      if(token == null){
-                        alert("Login please!");
-                        window.location.href ="/portal/src/main/webapp/WEB_INF/Pages/portalCheck.html";
-                      }else{
-
-                      readCookie("token");
-                      var xhttp = new XMLHttpRequest();
-                      xhttp.onreadystatechange = function() {
-                      if (this.readyState == 4 && this.status == 200) {
-                         var response = this.responseText;
-                         console.log(response);
-                         document.write(response);
-                        }
-                      };
-
-                      url = "https://proxy-staging-external.handler.talk.to/go.to/groups/5.0/activePublicGroupList?token="+token+"&guid="+guid;
-                      xhttp.open("POST", url);
-                      xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                      xhttp.send(JSON.stringify({to: "5165@groups.go.to"}));
-                      }
-}
 
 function createCookie(name,value,millis) {
+if(readCookie(name)==null || readCookie(name)==""){
     if (millis) {
         var date = new Date();
         date.setTime(date.getTime() + millis);
@@ -179,6 +165,7 @@ function createCookie(name,value,millis) {
         var expires = "";
     }
     document.cookie = name + "=" + value + expires + "; path=/";
+   }
 }
 
 function readCookie(name) {
@@ -202,23 +189,12 @@ function eraseCookie(name) {
 
 </script>
 <script>
-                      function login() {
-                      var xhttp = new XMLHttpRequest();
-                      xhttp.onreadystatechange = function() {
-                      if (this.readyState == 4 && this.status == 200) {
-                         var response = this.responseText;
-                         console.log(response);
-                         document.write(response);
 
-                        }
-                      };
-
-                      xhttp.open("POST", "https://proxy-staging-external.handler.talk.to/go.to/fzeus/v5.0/authenticate");
-                      xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                      xhttp.send(JSON.stringify({email :"suruchi.j@directi.com",password:"poi000poi"}));
+                     function logout() {
+                      localStorage.clear();
+                      var token = document.cookie;
+                      eraseCookie();
                      }
-
-
 
 </script>
 

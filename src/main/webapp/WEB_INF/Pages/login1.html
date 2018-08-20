@@ -43,13 +43,15 @@
                         <li _ngcontent-c1="" class="nav-item">
 
                             <!--logged In user email in span-->
-                            <span _ngcontent-c1="" class="user-message"></span>
+                            <span _ngcontent-c1="" class="user-message" id="loggedIn"></span>
                         </li>
                         <div>
-                            <li _ngcontent-c1="" class="nav-item"><a _ngcontent-c1="" class="nav-link" href="/portal/src/main/webapp/WEB_INF/Pages/login.html">Login</a></li>
+                            <li _ngcontent-c1="" class="nav-item"><a _ngcontent-c1="" class="nav-link"
+                                                                     href="/portal/src/main/webapp/WEB_INF/Pages/login1.html">Login</a></li>
                         </div>
                         <li _ngcontent-c1="" class="nav-item">
-                            <app-logout _ngcontent-c1="" _nghost-c2=""><a _ngcontent-c2="" class="logout nav-link" onclick="logout">Logout</a>
+                            <app-logout _ngcontent-c1="" _nghost-c2=""><a _ngcontent-c2="" class="logout nav-link"
+                                                                          onclick="logout()">Logout</a>
                             </app-logout>
                         </li>
                     </ul>
@@ -74,11 +76,10 @@
 
                                 Password: <input type="password" name="password"></br></br>
 
-                                Team Id: <input type="text" name="teamId"></br></br>
-
-                                <input class="btn button" value="login" onclick="getUserInfo()">
+                                <input class="btn button" type="button" value="login" onclick="getUserInfo()">
                             </form>
                             </p>
+                            <span id="result" style = "color:#FF0000;"> </span>
 
                         </div>
                     </div>
@@ -92,17 +93,17 @@
 <script type="text/javascript">
                       function getUserInfo() {
 
-                      var email = document.forms["myForm"]["email"].value;debugger;
+                      localStorage.clear();
+                       eraseCookie("token");
+                      var email = document.forms["myForm"]["email"].value;
                       console.log(email);
                       var pass = document.forms["myForm"]["password"].value;
-                      var teamId = document.forms["myForm"]["teamId"].value;
+
 
                       console.log(pass);
 
-                      var userInfo = "{email:email,password:pass}";
-
                            if (email == "" || pass =="") {
-                           alert("Name and password must be filled out");
+                           alert("Name ,password must be filled out");
                            }
 
                       var xhttpReq = new XMLHttpRequest();
@@ -110,23 +111,12 @@
                       xhttpReq.onreadystatechange = function() {
 
                       if (this.readyState == 4 && this.status == 200) {
-                       console.log(this.responseText);debugger;
+                       console.log(this.responseText);
                          var response = this.responseText;
+                         localStorage.setItem("email", email);
                          console.log(response);
 
                           var x= JSON.parse(this.responseText);
-                          for(var i=0;i<x.teams.length;i++){
-                            teamInfo = x.teams[i];
-                           if(teamInfo.teamId == teamId){
-                           console.log(teamInfo);
-                           localStorage.setItem("teamName", teamInfo.teamName);
-                           localStorage.setItem("teamPlan", teamInfo.licenseInfo.teamPlan);
-                           localStorage.setItem("isLicensed", teamInfo.licenseInfo.isLicensed);
-                           localStorage.setItem("role", teamInfo.role);
-                           localStorage.setItem("isAdmin", teamInfo.isAdmin);
-                           break;
-                       }
-                      }
 
                           console.log(x.token);
 
@@ -139,9 +129,13 @@
                           dateObj = new Date(dateObj);
                           createCookie("token",token,expiry);
                           console.log(document.cookie);
-                          window.location.href ="/portal/src/main/webapp/WEB_INF/Pages/portalAPI.html";
+                          window.location.href ="/portal/src/main/webapp/WEB_INF/Pages/TeamInfo.html";
                           console.log(document.cookie);
-                        }
+                        }else if(this.readyState == 4 && this.status != 200){
+                         var response = xhttpReq.responseText;
+                         console.log("Response :",response);
+                         document.getElementById("result").innerHTML=response;
+                         }
                       };
 
                       xhttpReq.open("POST", "https://proxy-staging-external.handler.talk.to/go.to/fzeus/v5.0/authenticate");
@@ -184,18 +178,16 @@ function readCookie(name) {
 }
 
 function eraseCookie(name) {
-    createCookie(name,"",-1);
+    document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
 </script>
 <script>
-
                      function logout() {
                       localStorage.clear();
                       var token = document.cookie;
-                      eraseCookie();
+                      eraseCookie("token");
                      }
-
 </script>
 
 </html>

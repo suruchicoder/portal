@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Flock</title>
+    <base href="/portal">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="portal/static/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/portal/static/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/portal/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/portal/static/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/portal/static/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/portal/static/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/portal/static/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/portal/static/css/main.css">
+    <!--===============================================================================================-->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="portal/static/css/styles.acff3498d6f25d15f2a5.bundle.css" rel="stylesheet">
+    <style></style>
+    <style>
+        .navbar-inverse[_ngcontent-c1]{background:#0abe51;border-radius:0;border:0}.navbar-brand[_ngcontent-c1]{padding:12px 30px}.navbar-nav[_ngcontent-c1]{float:right}.navbar-nav[_ngcontent-c1]   li[_ngcontent-c1]   a[_ngcontent-c1]{color:#fff;font-size:14px;text-decoration:none;text-align:center;position:relative;margin:12px 5px}.navbar-nav[_ngcontent-c1]   li[_ngcontent-c1]   a.active[_ngcontent-c1]:after, .navbar-nav[_ngcontent-c1]   li[_ngcontent-c1]   a[_ngcontent-c1]:hover:after{content:"";display:block;width:78%;height:3px;background:#fff;position:absolute;margin:0 auto;left:0;right:0;bottom:0}.navbar-brand[_ngcontent-c1]   img[_ngcontent-c1]{max-width:90px;width:100%}
+
+    </style>
+    <style>
+        .logout[_ngcontent-c2]{color:#fff!important;font-size:14px;padding:20px 15px;display:block;cursor:pointer;text-align:center}.logout[_ngcontent-c2]:hover{background:#ea4141;color:#fff!important;text-decoration:none}
+
+    </style>
+    <style>
+        .home-wrapper[_ngcontent-c3]{text-align:center}img[_ngcontent-c3]{max-width:600px;margin:35px 0}h1[_ngcontent-c3]{color:#222;font-size:45px}p[_ngcontent-c3]{margin:45px 0 auto}.button[_ngcontent-c3]{margin:0 25px 25px}
+    </style>
+</head>
+<body>
+<app-root _nghost-c0="" ng-version="4.4.6">
+    <app-navbar _ngcontent-c0="" _nghost-c1="">
+        <nav _ngcontent-c1="" class="navbar navbar-inverse">
+            <div _ngcontent-c1="" class="container-fluid">
+                <div _ngcontent-c1="" class="navbar-header">
+                    <a _ngcontent-c1="" class="navbar-brand" routerlink="/home">
+                <span _ngcontent-c1="" class="">
+                    <img _ngcontent-c1="" alt="flock" height="100" width="100"
+                         src="portal/static/images/image_flock.png">
+                </span>
+                    </a>
+                    <!---->
+                </div>
+
+                <div _ngcontent-c1="" class="navbar navbar-expand navbar-light" id="bs-example-navbar-collapse-2">
+                    <ul _ngcontent-c1="" class="nav navbar-nav">
+                        <!---->
+                        <li _ngcontent-c1="" class="nav-item">
+
+                            <!--logged In user email in span-->
+                            <span _ngcontent-c1="" class="user-message" id="loggedIn"></span>
+                        </li>
+                        <div>
+                            <li _ngcontent-c1="" class="nav-item"><a _ngcontent-c1="" class="nav-link"
+                                                                     href="/portal/src/main/webapp/WEB_INF/Pages/login1.html">Login</a>
+                            </li>
+                        </div>
+                        <li _ngcontent-c1="" class="nav-item">
+                            <app-logout _ngcontent-c1="" _nghost-c2=""><a _ngcontent-c2="" class="logout nav-link"
+                                                                          onclick="logout()">Logout</a>
+                            </app-logout>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </app-navbar>
+
+    <div class="Container " align="center" style="padding:20px">
+
+        <form name="myForm">
+            <div style="font-size:16px; font-weight:800">
+                TeamId :
+            </div>
+            <input type="text" name="teamId" style="line-height:20px;">
+            </br>
+            <input class="btn button" type="button" value="fetch Team Info" onclick="fetchTeamInfo()">
+        </form>
+
+    </div>
+    <div class="limiter" style="text-align: center;">
+        <span id="result" text-align="center" align="center" style="color:#FF0000; font-size: 15pt;"></span>
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div style="font-size:16px; font-weight:800">
+                    SpecialTeamInfo :
+                </div>
+                <div class="table100 ver1 m-b-110">
+                    <div class="table100-head">
+                        <table>
+                            <thead>
+                            <tr class="row100 head">
+                                <th class="cell100 column1">TeamId</th>
+                                <th class="cell100 column2">Type</th>
+                                <th class="cell100 column3">Enabled From</th>
+                                <th class="cell100 column4">Enabled Till</th>
+                                <th class="cell100 column5">Action</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="table100-body js-pscroll">
+                        <table>
+                            <tbody id="myContent">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="font-size:16px; font-weight:800">
+                    AccountData :
+                </div>
+                <div class="table100 ver1">
+                    <div class="table100-head">
+                        <table>
+                            <thead>
+                            <tr class="row100 head">
+                                <th class="cell100 column1">TeamId</th>
+                                <th class="cell100 column2">billingStartDate</th>
+                                <th class="cell100 column3">accountManager</th>
+                                <th class="cell100 column4">isProTeam</th>
+                                <th class="cell100 column5">isSelfServe</th>
+                                <th class="cell100 column6">isFree</th>
+                                <th class="cell100 column7"></th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="table100-body js-pscroll">
+                        <table>
+                            <tbody id="myContent1">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!--</app-home>-->
+    <!--</main>-->
+</app-root>
+</body>
+
+
+<script src="/portal/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="/portal/static/vendor/bootstrap/js/popper.js"></script>
+<script src="/portal/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="/portal/static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="/portal/static/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+</script>
+<!--===============================================================================================-->
+<script src="/portal/static/js/main.js"></script>
+
+
+<script>
+                     function logout() {
+                      localStorage.clear();
+                      eraseCookie("token");
+                     }
+
+                     function eraseCookie(name) {
+                     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                    }
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1,c.length);
+        }
+        if (c.indexOf(nameEQ) == 0) {
+            return c.substring(nameEQ.length,c.length);
+        }
+    }
+    return null;
+}
+</script>
+<script>
+function manageTeam(accountInfo) {
+console.log("oka "+accountInfo);debugger;
+    localStorage.setItem("isSpl",  "false");
+    localStorage.setItem("teamId", accountInfo.teamJID.split("@")[0]);
+    localStorage.setItem("billingStartDate", accountInfo.billingStartDate);
+    localStorage.setItem("accountManager", accountInfo.accountManager);
+    localStorage.setItem("isSelfServeTeam",  accountInfo.isSelfServeTeam);
+    localStorage.setItem("isFreeTeam",  accountInfo.isFreeTeam);
+    localStorage.setItem("isSalesTeam",  accountInfo.isSalesTeam);
+    localStorage.setItem("isProTeam",  accountInfo.isProTeam);
+
+ window.location.href="/portal/src/main/webapp/WEB_INF/Pages/portalAPI.html";
+}
+
+</script>
+<script>
+    function fetchTeamInfo() {
+    var teamId = document.forms["myForm"]["teamId"].value;debugger;
+    var token = readCookie("token");
+    console.log("teamId "+teamId + " "+token);
+    localStorage.setItem("teamId", teamId);
+
+    var xhttpReq = new XMLHttpRequest();
+
+                      xhttpReq.onreadystatechange = function() {
+
+                      if (this.readyState == 4 && this.status == 200) {
+                       console.log("okx "+this.responseText);debugger;
+                       var response = JSON.parse(this.responseText);
+                       console.log(response);
+
+     if(response.accountData !=null){
+         localStorage.setItem("isSpl",  "false");
+
+         var accountInfo = response.accountData;
+         localStorage.setItem("isSpl",  "false");
+         localStorage.setItem("billingStartDate", accountInfo.billingStartDate);
+         localStorage.setItem("isSelfServeTeam",  accountInfo.isSelfServeTeam);
+         localStorage.setItem("isFreeTeam",  accountInfo.isFreeTeam);
+         localStorage.setItem("isSalesTeam",  accountInfo.isSalesTeam);
+         localStorage.setItem("isProTeam",  accountInfo.isProTeam);
+     }
+     else if(response.specialTeamInfo !=null){
+     localStorage.setItem("isSpl",  "true");
+
+     var splTeamInfo = response.specialTeamInfo;
+     localStorage.setItem("enabledFrom",splTeamInfo.enabledFrom);
+     localStorage.setItem("enabledTill", splTeamInfo.enabledTill);
+     localStorage.setItem("source", source);
+     localStorage.setItem("note", note);
+    }
+
+    window.location.href="/portal/src/main/webapp/WEB_INF/Pages/portalAPI.html";
+    }else if(this.readyState == 4 && this.status != 200){
+                         var response = xhttpReq.responseText;
+                         console.log("Response :",response);
+                         document.getElementById("result").innerHTML=response;
+                         }
+};
+
+                      xhttpReq.open("GET", "https://proxy-staging-external.handler.talk.to/go.to/moros/v5.0/getTeamInfo?token=0uwhzu0b6u6wbz6b2muw3jhz3wj26w0h&guid=sw5nj5yw11swsvwy&teamId=5504");
+                      xhttpReq.send();
+}
+</script>
+
+<script>
+(function onLoad(){
+
+if(localStorage.getItem("email")!=null)
+document.getElementById("loggedIn").innerHTML="User:"+ localStorage.getItem("email");
+if(readCookie("token") == null ){
+alert("Login please!");
+  window.location.href="/portal/src/main/webapp/WEB_INF/Pages/login1.html";
+}
+
+
+var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+                   var teamsRes = JSON.parse(this.responseText);
+                   console.log(teamsRes);
+                  var splTeamInfo = teamsRes.specialTeamInfo;
+                  console.log(splTeamInfo);
+
+      for(var x=0; x<splTeamInfo.length; x++){
+      var splTeam = splTeamInfo[x];
+      $('#myContent').append('<tr class=row100 body">');
+      $('#myContent').append('<td class="cell100 column1">'+splTeam.teamId+'</td>');
+      $('#myContent').append('<td class="cell100 column1">'+splTeam.type+'</td>');
+      $('#myContent').append('<td class="cell100 column1">'+splTeam.specialTeamConfig.enabledFrom+'</td>');
+      $('#myContent').append('<td class="cell100 column1">splTeam.specialTeamConfig.enabledTill</td></tr>');
+      }
+
+      var accountData = teamsRes.accountData;
+                  console.log(accountData);
+                  for(var x=0; x<accountData.length; x++){
+
+                  var accountInfo = accountData[x];
+                  var billing = JSON.stringify(accountData[x].billingStartDate);
+
+      $('#myContent1').append('<tr class=row100 body">');
+      $('#myContent1').append('<td class="cell100 column1">'+accountInfo.teamJID.split("@")[0]+'</td>');
+      $('#myContent1').append('<td class="cell100 column2">'+accountInfo.billingStartDate+'</td>');
+      $('#myContent1').append('<td class="cell100 column3">'+accountInfo.accountManager+'</td>');
+      $('#myContent1').append('<td class="cell100 column4">'+accountInfo.isProTeam+'</td>');
+      $('#myContent1').append('<td class="cell100 column5">'+accountInfo.isSelfServeTeam+'</td>');
+      $('#myContent1').append('<td class="cell100 column6">'+accountInfo.isFreeTeam+'</td>');
+
+        var btn = document.createElement('button');
+        btn.type = "button";
+        btn.className = "btn button";
+        btn.innerText = "manage";
+        btn.style.width = "77px";
+        btn.style.minWidth = "70px";
+        btn.style.margin= "20px";
+        btn.onclick = (function(accountInfo) {return function() {manageTeam(accountInfo);}})(accountInfo);
+
+$('#myContent1').append(btn);
+$('#myContent1').append('</td></tr>');
+     }
+}
+};
+xhttp.open("GET", "https://proxy-staging-external.handler.talk.to/go.to/moros/v5.0/fetchProTeams?token=8t8s66sgreeas83amdamge8red6gaadt&guid=22tknn22k2hn1gpp&teamId=7158",true);
+xhttp.send();
+})()
+
+</script>
+
+
+</html>
